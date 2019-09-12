@@ -27,7 +27,7 @@ const DisplayPic = (props) => {
           <Title>Nasa Photo of the Day.</Title>
           <CardSubtitle>{props.date}</CardSubtitle>
           <CardText>{props.explanation}</CardText>
-          <Button>Button</Button>
+          <Button>{props.day}</Button>
         </CardBody>
       </Card>
     </div>

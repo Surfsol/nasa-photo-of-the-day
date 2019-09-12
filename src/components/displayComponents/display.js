@@ -6,15 +6,16 @@ import DisplayPic from './displayPic'
 
 function Display() {
   const [picNasa, setPicNasa] = useState({}); //expecting to get an array
-    
+  const [day, setDay] = useState("2019-09-11");
     useEffect(() => {
     axios
         .get(`
-        https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY`) //add KEY
+        https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=${day}`) //add KEY
         .then(response => {
             console.log(`response`, response)
             let picNasa = response.data;
             console.log(`picNasa, object`, response.data);
+            console.log(`picNasa, object`, [picNasa]);
             setPicNasa(picNasa);
         })
         .catch(error => {
@@ -23,9 +24,14 @@ function Display() {
     }, []);
 
         return (
-            <div class="App">
+    
+            
+            <div className="App">
+                <button onClick={() => setDay("2019-09-10")}>{day}</button>
            {[picNasa].map((e, index) => (
                <DisplayPic 
+               key={index}
+               day= {day}
                date = {e.date}
                explanation={e.explanation}
                hdurl = {e.hdurl}
