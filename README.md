@@ -71,7 +71,7 @@ Follow these steps for completing your project.
 
 DEMO KEY rate limits:
 
-> Hourly Limit: 30 requests per IP address per hour
+> Hourly Limit: 30 requests per IP address per hour 
 
 > Daily Limit: 50 requests per IP address per day
 
